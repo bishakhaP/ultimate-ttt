@@ -1,0 +1,177 @@
+*{
+    --dark-green: rgba(3, 26, 0, 1);
+    --highlighted-bg: #49a078;
+    --boarder-white: #FEFAEC;
+    margin: 0;
+    padding: 0;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Playwrite+CZ&display=swap');
+
+    .gloria-hallelujah-regular {
+        font-family: "Gloria Hallelujah", cursive;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+
+      .playwrite-cz-{
+        font-family: "Playwrite CZ", cursive;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+body{
+  padding-top: 10px;
+    background-color: var(--dark-green);
+    color: var(--boarder-white);
+    font-family: "Gloria Hallelujah", cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1{
+    width: 100%;
+    font-size: 35px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+h2{
+    width: 100%;
+    text-align: center;
+    padding: auto;
+    padding-bottom: 5px;
+    font-size: 25px;
+}
+
+#options{
+    height: 50px;
+    width: 100%;
+    font-size: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+}
+
+button{
+  font-size: 20px;
+  color: var(--boarder-white);
+  background-color: var(--dark-green);
+  border: none;
+  cursor: pointer;
+}
+
+#board-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border: 2px solid var(--boarder-white);
+    /* width: 80vmin;
+    height: 80vmin; */
+    padding: 0;
+    margin: 0;
+}
+
+.large-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    border: 2px solid var(--boarder-white);
+    position: relative;
+    padding: 20px;
+}
+
+.cell{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    height: 40px;
+    width: 40px;
+    border: 0.4px solid var(--boarder-white);
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    font-size: 5vmin;
+}
+
+/* Remove borders selectively to create clean lines */
+.cell:nth-child(3n + 1) {
+    /* Leftmost cells */
+    border-left: none;
+  }
+  
+  .cell:nth-child(3n) {
+    /* Rightmost cells */
+    border-right: none;
+  }
+  
+  .cell:nth-child(-n + 3) {
+    /* Top row cells */
+    border-top: none;
+  }
+  
+  .cell:nth-last-child(-n + 3) {
+    /* Bottom row cells */
+    border-bottom: none;
+  }
+
+.XorO{
+    color: whitesmoke;
+    font-family: "Playwrite CZ", serif;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0;
+    
+    text-align: center;
+}
+
+.XorOhovered{
+    font-family: "Playwrite CZ", serif;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0;
+    text-align: center;
+    color: rgba(222, 226, 230, 0.5);
+    background-color: rgba(233, 236, 239, 0.3);
+}
+
+.disabled-grid{
+  pointer-events: none;
+}
+
+.disabled-style{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 0;
+  font-size: 80px;
+  color: var(--boarder-white);
+  opacity: 0.5;
+
+}
+
+.highlight-grid {
+  background-color: var(--highlighted-bg);
+  opacity: 1;
+}
+
+.finalWins{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  color: red;
+}
